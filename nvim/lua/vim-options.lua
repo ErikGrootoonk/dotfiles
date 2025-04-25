@@ -9,6 +9,7 @@ vim.keymap.set('n', 'x', '"_x')
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')

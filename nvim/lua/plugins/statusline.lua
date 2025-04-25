@@ -8,7 +8,6 @@ return {
 				theme = "auto",
 				component_separators = "",
 				section_separators = "",
-        extensions = {"fugitive"},
 			},
 
 			sections = {
@@ -28,6 +27,7 @@ return {
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
+      extensions = { "fugitive" },
 		})
 	end,
 }
