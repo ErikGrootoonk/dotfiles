@@ -10,7 +10,7 @@ vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.wo.number = true
 vim.wo.relativenumber = true
-
+vim.opt.termguicolors = true
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
