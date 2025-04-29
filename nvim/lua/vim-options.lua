@@ -1,3 +1,7 @@
+-- set nofsync
+vim.g.nofsync = true
+
+-- set tab behaviour
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
