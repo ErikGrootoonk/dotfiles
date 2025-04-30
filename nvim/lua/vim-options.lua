@@ -1,5 +1,5 @@
 -- set nofsync
-vim.g.nofsync = true
+--vim.g.nofsync = true
 
 -- set tab behaviour
 vim.cmd("set expandtab")
