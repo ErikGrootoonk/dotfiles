@@ -54,8 +54,6 @@ nnoremap <c-l> :wincmd l<cr>
 
 nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>v <C-v>
-nnoremap <tab> :bnext<cr> 
-nnoremap <S-tab> :bprevious<cr>
 
 "delete single character without copying into register
 nnoremap x "_x
