@@ -10,7 +10,7 @@ if [ -f "$FILE" ]; then
     rm "$FILE"
 fi
 
-curl  -O --output-dir ~/downloads https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz ~/downloads/
+curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz -O --output-dir ~/downloads
 
 sudo rm -rf /opt/nvim-linux-x86_64
 
