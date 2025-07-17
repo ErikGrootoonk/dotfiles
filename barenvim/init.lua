@@ -86,7 +86,7 @@ opt.shortmess = opt.shortmess + {
 } -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 
 -- By the way, -- INSERT -- is unnecessary anymore because the mode information is displayed in the statusline.
-opt.showmode = false
+opt.showmode = true
 
 -- perfomance
 -- remember N lines in history
