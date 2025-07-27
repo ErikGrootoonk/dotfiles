@@ -86,7 +86,7 @@ opt.shortmess = opt.shortmess + {
 } -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 
 -- By the way, -- INSERT -- is unnecessary anymore because the mode information is displayed in the statusline.
-opt.showmode = false
+opt.showmode = true
 
 -- perfomance
 -- remember N lines in history
@@ -98,3 +98,8 @@ opt.updatetime = 100 -- signify default updatetime 4000ms is not good for async 
 
 -- theme
 opt.termguicolors = true -- enable 24-bit RGB colors
+
+-- keymaps
+vim.keymap.set('n', '<leader>w', ':write<CR>')
+vim.keymap.set('n', '<leader>q', ':quit<CR>')
+vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
