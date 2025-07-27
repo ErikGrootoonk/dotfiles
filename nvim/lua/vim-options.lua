@@ -1,5 +1,5 @@
 -- set nofsync
---vim.g.nofsync = true
+-- vim.g.nofsync = true
 
 -- set tab behaviour
 vim.cmd("set expandtab")
@@ -10,11 +10,13 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>v', '<C-v>')
 vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set('n', '<leader>ec', ':edit $MYVIMRC<CR>', { desc = 'Edit config' })
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"                         -- Always show sign column
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
