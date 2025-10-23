@@ -9,7 +9,7 @@
 -- File: options.lua
 -- Description: General Neovim settings and configuration
 -- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
-local cmd = vim.cmd
+-- local cmd = vim.cmd
 -- Set options (global/buffer/windows-scoped)
 local opt = vim.opt
 -- Global variables
@@ -18,7 +18,7 @@ local indent = 4
 
 g.mapleader = " "
 
-cmd [[
+vim.cmd [[
 	filetype plugin indent on
 ]]
 
@@ -98,8 +98,14 @@ opt.updatetime = 100 -- signify default updatetime 4000ms is not good for async 
 
 -- theme
 opt.termguicolors = true -- enable 24-bit RGB colors
-
+vim.cmd('colorscheme retrobox') 
 -- keymaps
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
 vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
+
+-- Navigate vim panes better
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
