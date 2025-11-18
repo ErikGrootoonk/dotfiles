@@ -1,0 +1,1 @@
+/home/erik/git/dotfiles/barenvim/init.lua
