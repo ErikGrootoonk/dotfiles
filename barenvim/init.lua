@@ -6,12 +6,11 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 --
--- File: options.lua
+--File: options.lua
 -- Description: General Neovim settings and configuration
 -- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
 -- local cmd = vim.cmd
 -- Set options (global/buffer/windows-scoped)
-local opt = vim.opt
 -- Global variables
 local g = vim.g
 local indent = 4
@@ -22,39 +21,48 @@ vim.cmd [[
 	filetype plugin indent on
 ]]
 
-opt.backspace = { "eol", "start", "indent" } -- allow backspacing over everything in insert mode
-opt.clipboard = "unnamedplus" -- allow neovim to access the system clipboard
-opt.fileencoding = "utf-8" -- the encoding written to a file
-opt.encoding = "utf-8" -- the encoding
-opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
-opt.syntax = "enable"
+-- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
+-- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
+-- See `:help 'clipboard'`
+vim.api.nvim_create_autocmd('UIEnter', {
+  callback = function()
+    vim.opt.clipboard = 'unnamedplus'
+  end,
+})
+
+vim.opt.backspace = { "eol", "start", "indent" } -- allow backspacing over everything in insert mode
+vim.opt.clipboard = "unnamedplus" -- allow neovim to access the system clipboard
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+vim.opt.encoding = "utf-8" -- the encoding
+vim.opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
+vim.opt.syntax = "enable"
 
 -- indention
-opt.autoindent = true -- auto indentation
-opt.expandtab = true -- convert tabs to spaces
-opt.shiftwidth = indent -- the number of spaces inserted for each indentation
-opt.smartindent = true -- make indenting smarter
-opt.softtabstop = indent -- when hitting <BS>, pretend like a tab is removed, even if spaces
-opt.tabstop = indent -- insert 2 spaces for a tab
-opt.shiftround = true -- use multiple of shiftwidth when indenting with "<" and ">"
+vim.opt.autoindent = true -- auto indentation
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.shiftwidth = indent -- the number of spaces inserted for each indentation
+vim.opt.smartindent = true -- make indenting smarter
+vim.opt.softtabstop = indent -- when hitting <BS>, pretend like a tab is removed, even if spaces
+vim.opt.tabstop = indent -- insert 2 spaces for a tab
+vim.opt.shiftround = true -- use multiple of shiftwidth when indenting with "<" and ">"
 
 -- tabline
-opt.showtabline = 2 -- always show tabs
-opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
+vim.opt.showtabline = 2 -- always show tabs
+vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 -- search
-opt.hlsearch = true -- highlight all matches on previous search pattern
-opt.ignorecase = true -- ignore case in search patterns
-opt.smartcase = true -- smart case
-opt.wildignore = opt.wildignore + { "*/node_modules/*", "*/.git/*", "*/vendor/*" }
-opt.wildmenu = true -- make tab completion for files/buffers act like bash
+vim.opt.hlsearch = true -- highlight all matches on previous search pattern
+vim.opt.ignorecase = true -- ignore case in search patterns
+vim.opt.smartcase = true -- smart case
+vim.opt.wildignore = vim.opt.wildignore + { "*/node_modules/*", "*/.git/*", "*/vendor/*" }
+vim.opt.wildmenu = true -- make tab completion for files/buffers act like bash
 
 -- ui
-opt.cursorline = true -- highlight the current line
-opt.laststatus = 2 -- only the last window will always have a status line
-opt.lazyredraw = true -- don"t update the display while executing macros
-opt.list = true
+vim.opt.cursorline = true -- highlight the current line
+vim.opt.laststatus = 2 -- only the last window will always have a status line
+vim.opt.lazyredraw = true -- don"t update the display while executing macros
+vim.opt.list = true
 -- You can also add "space" or "eol", but I feel it"s quite annoying
-opt.listchars = {
+vim.opt.listchars = {
     tab = "┊ ",
     trail = "·",
     extends = "»",
@@ -63,42 +71,42 @@ opt.listchars = {
 }
 
 -- Hide cmd line
---opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
+--vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 
-opt.mouse = "a" -- allow the mouse to be used in neovim
-opt.number = true -- set numbered lines
-opt.relativenumber = true -- set relative number
-opt.scrolloff = 18 -- minimal number of screen lines to keep above and below the cursor
-opt.sidescrolloff = 3 -- minimal number of screen columns to keep to the left and right (horizontal) of the cursor if wrap is `false`
-opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-opt.splitbelow = true -- open new split below
-opt.splitright = true -- open new split to the right
-opt.wrap = true -- display a wrapped line
+vim.opt.mouse = "a" -- allow the mouse to be used in neovim
+vim.opt.number = true -- set numbered lines
+vim.opt.relativenumber = true -- set relative number
+vim.opt.scrolloff = 18 -- minimal number of screen lines to keep above and below the cursor
+vim.opt.sidescrolloff = 3 -- minimal number of screen columns to keep to the left and right (horizontal) of the cursor if wrap is `false`
+vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+vim.opt.splitbelow = true -- open new split below
+vim.opt.splitright = true -- open new split to the right
+vim.opt.wrap = true -- display a wrapped line
 
 -- backups
-opt.backup = false -- create a backup file
-opt.swapfile = false -- creates a swapfile
-opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.opt.backup = false -- create a backup file
+vim.opt.swapfile = false -- creates a swapfile
+vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 -- autocomplete
-opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
-opt.shortmess = opt.shortmess + {
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
+vim.opt.shortmess = vim.opt.shortmess + {
     c = true,
 } -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 
 -- By the way, -- INSERT -- is unnecessary anymore because the mode information is displayed in the statusline.
-opt.showmode = true
+vim.opt.showmode = true
 
 -- perfomance
 -- remember N lines in history
-opt.history = 100 -- keep 100 lines of history
-opt.redrawtime = 1500
-opt.timeoutlen = 250 -- time to wait for a mapped sequence to complete (in milliseconds)
-opt.ttimeoutlen = 10
-opt.updatetime = 100 -- signify default updatetime 4000ms is not good for async update
+vim.opt.history = 100 -- keep 100 lines of history
+vim.opt.redrawtime = 1500
+vim.opt.timeoutlen = 250 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.ttimeoutlen = 10
+vim.opt.updatetime = 100 -- signify default updatetime 4000ms is not good for async update
 
 -- theme
-opt.termguicolors = true -- enable 24-bit RGB colors
+vim.opt.termguicolors = true -- enable 24-bit RGB colors
 vim.cmd('colorscheme retrobox') 
 -- keymaps
 vim.keymap.set('n', '<leader>w', ':write<CR>')
