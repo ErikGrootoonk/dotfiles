@@ -12,6 +12,12 @@
 -- local cmd = vim.cmd
 -- Set options (global/buffer/windows-scoped)
 -- Global variables
+
+-- setup lazy
+require("config.lazy")
+
+
+
 local g = vim.g
 local indent = 4
 

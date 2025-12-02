@@ -26,9 +26,8 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>v', '<C-v>')
 vim.keymap.set('n', 'x', '"_x')
-vim.keymap.set('n', '<F4>', ':w<CR>')
-vim.keymap.set('i', '<F4>', '<C-o>:w<cr>')
-
+vim.keymap.set('i', '<leader>w>', '<C-o>:w<CR>')
+vim.keymap.set('n', '<leader>w', ':w<CR>')
 -- Buffers
 vim.keymap.set('n', '<tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-tab>', ':bprevious<CR>')
