@@ -80,6 +80,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Post-update hook can be a lambda expression
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:tokyonight_style = 'night' " available: night, storm
@@ -133,7 +134,9 @@ nnoremap <Del> "_x
 " Toggle spell check.
 map <F5> :setlocal spell!<CR>
 
-
+" vim airline
+let g:airline#extensions#branch#enabled = 1
+let g:airline_powerline_fonts = 1
 
 set clipboard+=unnamedplus
 " WSL yank support
