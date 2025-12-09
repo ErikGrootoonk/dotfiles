@@ -95,8 +95,4 @@ return { -- Autocompletion
 		-- Shows a signature help window while you type arguments for a function
 		signature = { enabled = true },
 	},
-	{
-		"folke/neodev.nvim",
-		opts = {}, -- Empty table is fine, it configures lua_ls automatically
-	},
 }

@@ -19,7 +19,7 @@ require("config.lazy")
 
 
 local g = vim.g
-local indent = 4
+local indent = 2
 
 g.mapleader = " "
 
