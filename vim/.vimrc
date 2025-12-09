@@ -72,6 +72,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Use 'dir' option to install plugin in a non-default directory
+Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+
+" Post-update hook: run a shell command after installing or updating the plugin
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Post-update hook can be a lambda expression
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 let g:tokyonight_style = 'night' " available: night, storm
@@ -129,10 +137,10 @@ map <F5> :setlocal spell!<CR>
 
 set clipboard+=unnamedplus
 " WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
+"let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+"if executable(s:clip)
+"    augroup WSLYank
+"        autocmd!
+"        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+"    augroup END
+"endif
