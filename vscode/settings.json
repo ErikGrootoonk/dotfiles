@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.mouseWheelZoom": true,
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "git.enableSmartCommit": true,
+    "window.zoomLevel": 2
+}
