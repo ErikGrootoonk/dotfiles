@@ -14,7 +14,7 @@
 -- Global variables
 
 -- setup lazy
-require("config.lazy")
+--require("config.lazy")
 
 
 
