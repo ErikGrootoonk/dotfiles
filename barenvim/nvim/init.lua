@@ -66,6 +66,7 @@ vim.opt.cursorline = true -- highlight the current line
 vim.opt.laststatus = 2 -- only the last window will always have a status line
 vim.opt.lazyredraw = true -- don"t update the display while executing macros
 vim.opt.list = true
+vim.opt.winborder = "rounded"
 -- You can also add "space" or "eol", but I feel it"s quite annoying
 vim.opt.listchars = {
     tab = "┊ ",
@@ -76,8 +77,7 @@ vim.opt.listchars = {
 }
 
 -- Hide cmd line
---vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
-
+vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative number
