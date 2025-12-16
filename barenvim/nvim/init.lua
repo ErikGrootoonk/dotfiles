@@ -8,7 +8,6 @@
 --
 --File: options.lua
 -- Description: General Neovim settings and configuration
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
 -- local cmd = vim.cmd
 -- Set options (global/buffer/windows-scoped)
 -- Global variables
@@ -118,9 +117,18 @@ vim.cmd('colorscheme retrobox')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
 vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
+vim.keymap.set('n', '<leader>v', '<C-v>')
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+
+-- Terminal below
+
+--vim.keymap.set('n', '<leader>t', ':bel split && :terminal<CR>', {
+--  noremap = true,
+--  silent = true,
+--  desc = '[T]erminal (Horizontal Split Below)'
+--})

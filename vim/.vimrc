@@ -139,6 +139,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 
 set clipboard+=unnamedplus
+
+nnoremap <leader>y "+y
 " WSL yank support
 "let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 "if executable(s:clip)
