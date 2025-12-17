@@ -7,7 +7,7 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>w', ':w<cr>', {desc = 'save file with leader w'}) -- Save file
 
 -- Block V select in windows
-vim.keymap.set('n', '<leader>v', '<C-v', {desc = 'enable block select in wsl'})
+-- vim.keymap.set('n', '<c-/>', '<c-v', {desc = 'enable block select in wsl'})
 
 -- Toggle Terminal
 vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', {desc = 'toggle terminal'})
