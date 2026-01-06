@@ -77,7 +77,7 @@ vim.opt.listchars = {
 }
 
 -- Hide cmd line
-vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
+-- vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative number
