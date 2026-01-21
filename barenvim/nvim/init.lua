@@ -60,6 +60,7 @@ vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case
 vim.opt.wildignore = vim.opt.wildignore + { "*/node_modules/*", "*/.git/*", "*/vendor/*" }
 vim.opt.wildmenu = true -- make tab completion for files/buffers act like bash
+vim.opt.path = "+=**" -- search files recursively
 
 -- ui
 vim.opt.cursorline = true -- highlight the current line
@@ -75,6 +76,39 @@ vim.opt.listchars = {
     precedes = "«",
     nbsp = "×",
 }
+
+-- netrw config
+g.netrw_banner = 0	    			-- gets rid of the annoying banner for netrw
+g.netrw_browse_split = 4
+g.netrw_altv = 0					-- change from left splitting to right splitting
+g.netrw_liststyle = 3				-- tree style view in netrw
+--vim.g.netrw_winsize = 30                -- takes up 30% of the screen
+g.netrw_sizestyle = "H"
+g.netrw_sort_sequence = [[[\/]$,*]] -- sort directories first
+g.netrw_keepdir = 0
+g.netrw_sort_sequence = [[[\/]$,*]]
+g.netrw_sizestyle = "H"
+g.netrw_localcopydircmd = "cp -r"
+g.netrw_localmkdir = "mkdir -p"
+g.netrw_localrmdir = "rm -r"
+g.netrw_compress = "gzip"
+g.netrw_cursor = 2
+g.netrw_preview = 0
+g.netrw_alto = 1
+
+-- directory names are blue
+vim.api.nvim_set_hl(0, "netrwDir", { fg = "#83a598" })
+-- classify symbols "/" are green
+vim.api.nvim_set_hl(0, "netrwClassify", { fg = "#b8bb26" })
+-- executable files are yellow
+vim.api.nvim_set_hl(0, "netrwExe", { fg = "#fabd2f" })
+-- symlinks are purple 
+vim.api.nvim_set_hl(0, "netrwExe", { fg = "#d3869b" })
+-- marked files are orange
+vim.api.nvim_set_hl(0, "netrwExe", { fg = "#fe8019" })
+
+
+
 
 -- Hide cmd line
 -- vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
@@ -92,6 +126,9 @@ vim.opt.wrap = true -- display a wrapped line
 vim.opt.backup = false -- create a backup file
 vim.opt.swapfile = false -- creates a swapfile
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.o.undofile = true					-- set undo file
+vim.o.undodir = vim.fn.expand("~/.local/share/nvim/undodir")
+
 
 -- autocomplete
 vim.opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
@@ -113,11 +150,24 @@ vim.opt.updatetime = 100 -- signify default updatetime 4000ms is not good for as
 -- theme
 vim.opt.termguicolors = true -- enable 24-bit RGB colors
 vim.cmd('colorscheme retrobox') 
+
 -- keymaps
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
-vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
+vim.keymap.set('n', '<leader>e', ':25Lexplore<CR>')
 vim.keymap.set('n', '<leader>v', '<C-v>')
+
+-- reload config
+vim.keymap.set("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>")
+
+-- easy split generation
+vim.keymap.set("n", "<leader>vs", ":vsplit ")				-- space+v creates a veritcal split
+vim.keymap.set("n", "<leader>hs", ":split ")					-- space+s creates a horizontal split
+
+-- adjust split sizes easier
+vim.keymap.set("n", "<C-Left>", ":vertical resize -3<CR>")		-- Control+Left resizes vertical split +
+vim.keymap.set("n", "<C-Right>", ":vertical resize +3<CR>")	-- Control+Right resizes vertical split -
+
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
@@ -132,3 +182,4 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 --  silent = true,
 --  desc = '[T]erminal (Horizontal Split Below)'
 --})
+
