@@ -138,7 +138,7 @@ map <F5> :setlocal spell!<CR>
 let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 nnoremap <leader>y "+y
 " WSL yank support

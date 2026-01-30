@@ -78,23 +78,23 @@ vim.opt.listchars = {
 }
 
 -- netrw config
-g.netrw_banner = 0	    			-- gets rid of the annoying banner for netrw
-g.netrw_browse_split = 4
-g.netrw_altv = 0					-- change from left splitting to right splitting
-g.netrw_liststyle = 3				-- tree style view in netrw
---vim.g.netrw_winsize = 30                -- takes up 30% of the screen
-g.netrw_sizestyle = "H"
-g.netrw_sort_sequence = [[[\/]$,*]] -- sort directories first
-g.netrw_keepdir = 0
-g.netrw_sort_sequence = [[[\/]$,*]]
-g.netrw_sizestyle = "H"
-g.netrw_localcopydircmd = "cp -r"
-g.netrw_localmkdir = "mkdir -p"
-g.netrw_localrmdir = "rm -r"
-g.netrw_compress = "gzip"
-g.netrw_cursor = 2
-g.netrw_preview = 0
-g.netrw_alto = 1
+--g.netrw_banner = 0	    			-- gets rid of the annoying banner for netrw
+--g.netrw_browse_split = 4
+--g.netrw_altv = 0					-- change from left splitting to right splitting
+--g.netrw_liststyle = 3				-- tree style view in netrw
+----vim.g.netrw_winsize = 30                -- takes up 30% of the screen
+--g.netrw_sizestyle = "H"
+--g.netrw_sort_sequence = [[[\/]$,*]] -- sort directories first
+--g.netrw_keepdir = 0
+--g.netrw_sort_sequence = [[[\/]$,*]]
+--g.netrw_sizestyle = "H"
+--g.netrw_localcopydircmd = "cp -r"
+--g.netrw_localmkdir = "mkdir -p"
+--g.netrw_localrmdir = "rm -r"
+--g.netrw_compress = "gzip"
+--g.netrw_cursor = 2
+--g.netrw_preview = 0
+--g.netrw_alto = 1
 
 -- directory names are blue
 vim.api.nvim_set_hl(0, "netrwDir", { fg = "#83a598" })
