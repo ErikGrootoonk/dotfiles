@@ -182,4 +182,3 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 --  silent = true,
 --  desc = '[T]erminal (Horizontal Split Below)'
 --})
-
