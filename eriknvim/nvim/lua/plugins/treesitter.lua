@@ -13,8 +13,8 @@ return {
           enable = true,
           keymaps = {
             init_selection = "<A-o>",
-            node_incremental = "<TAB>",
-            scope_incremental = "<TAB>",
+            node_incremental = "<A-o>",
+            scope_incremental = "<A-o>",
             node_decremental = "<A-i>",
           },
         },
