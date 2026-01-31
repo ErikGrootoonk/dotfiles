@@ -1,4 +1,13 @@
 
+-- indention
+vim.o.autoindent = true -- auto indentation
+vim.o.expandtab = true -- convert tabs to spaces
+vim.o.shiftwidth = indent -- the number of spaces inserted for each indentation
+vim.o.smartindent = true -- make indenting smarter
+vim.o.softtabstop = indent -- when hitting <BS>, pretend like a tab is removed, even if spaces
+vim.o.tabstop = indent -- insert 2 spaces for a tab
+vim.o.shiftround = true -- use multiple of shiftwidth when indenting with "<" and ">"
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
