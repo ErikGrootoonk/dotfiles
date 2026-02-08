@@ -34,7 +34,7 @@ vim.o.showmode = false
 --  See `:help 'clipboard'`
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
-vim.o.backspace = { "eol", "start", "indent" } -- allow backspacing over everything in insert mode
+vim.o.backspace = "eol,start,indent" -- allow backspacing over everything in insert mode
 -- Enable break indent
 vim.o.breakindent = true
 
