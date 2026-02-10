@@ -123,6 +123,8 @@ alias kgc='k config get-contexts'
 alias kuc='k config use-context'
 alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y'
+alias v='NVIM_APPNAME=eriknvim nvim' # verwijst naar symlink in .config
+alias iv='v $(fzf --preview="batcat --color=always {}")'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export NVM_DIR="$HOME/.nvm"
@@ -139,3 +141,4 @@ source /etc/bash_completion.d/git-prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")\$ '
 
+export PATH="$HOME/.local/bin:$PATH"
