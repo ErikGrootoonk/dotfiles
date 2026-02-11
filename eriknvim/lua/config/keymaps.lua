@@ -69,8 +69,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<leader>cf", function()
 	require("conform").format({
 		lsp_format = "fallback",
-	}
-)
+	})
 end, { desc = "[c]onform [f]ormat file" })
 
 vim.keymap.set("n", "<leader>v", "<C-v>", { desc = "map leader v to control v for block selecting" })
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "toggle Neotree", silent = true, noremap = true })
