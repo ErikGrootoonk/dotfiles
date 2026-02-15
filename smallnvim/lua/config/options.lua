@@ -1,4 +1,4 @@
-
+local indent = 4
 -- indention
 vim.o.autoindent = true -- auto indentation
 vim.o.expandtab = true -- convert tabs to spaces
