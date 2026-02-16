@@ -125,6 +125,7 @@ alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y'
 alias v='NVIM_APPNAME=eriknvim nvim' # verwijst naar symlink in .config
 alias va='NVIM_APPNAME=astronvim nvim'
+alias vs='NVIM_APPNAME=smallnvim nvim'
 alias iv='v $(fzf --preview="batcat --color=always {}")'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
