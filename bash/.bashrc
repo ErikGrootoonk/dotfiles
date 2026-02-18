@@ -147,3 +147,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Set up fzf key bindings fuzzy completion
 eval "$(fzf --bash)"
+
+# Setup zoxide
+eval "$(zoxide init bash)"
