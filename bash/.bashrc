@@ -127,6 +127,7 @@ alias v='NVIM_APPNAME=eriknvim nvim' # verwijst naar symlink in .config
 alias va='NVIM_APPNAME=astronvim nvim'
 alias vs='NVIM_APPNAME=smallnvim nvim'
 alias iv='v $(fzf --preview="batcat --color=always {}")'
+alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export NVM_DIR="$HOME/.nvm"
@@ -147,3 +148,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Set up fzf key bindings fuzzy completion
 eval "$(fzf --bash)"
+
+# load zoxide
+eval "$(zoxide init bash)"
