@@ -123,8 +123,8 @@ alias kgc='k config get-contexts'
 alias kuc='k config use-context'
 alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y'
-alias v='NVIM_APPNAME=eriknvim nvim' # verwijst naar symlink in .config
-alias va='NVIM_APPNAME=astronvim nvim'
+#alias v='NVIM_APPNAME=eriknvim nvim' # verwijst naar symlink in .config
+alias v='NVIM_APPNAME=astronvim nvim'
 alias vs='NVIM_APPNAME=smallnvim nvim'
 alias iv='v $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
