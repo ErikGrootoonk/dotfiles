@@ -14,10 +14,10 @@ vim.opt.termguicolors = true
 -- indention
 vim.opt.autoindent = true -- auto indentation
 vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.smartindent = true -- make indenting smarter
-vim.opt.softtabstop = 4 -- when hitting <BS>, pretend like a tab is removed, even if spaces
-vim.opt.tabstop = 4 -- insert 4 spaces for a tab
+vim.opt.softtabstop = 2 -- when hitting <BS>, pretend like a tab is removed, even if spaces
+vim.opt.tabstop = 2 -- insert 4 spaces for a tab
 vim.opt.shiftround = true -- use multiple of shiftwidth when indenting with "<" and ">"
 
 
@@ -54,4 +54,4 @@ vim.g.netrw_banner = 0
 vim.opt.termguicolors = true -- enable 24-bit RGB colors
 vim.cmd('colorscheme retrobox') 
 
-vim.opt.showmode = fals`e
+vim.opt.showmode = false
