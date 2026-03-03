@@ -55,3 +55,6 @@ vim.opt.termguicolors = true -- enable 24-bit RGB colors
 vim.cmd('colorscheme retrobox') 
 
 vim.opt.showmode = false
+
+-- clipboard
+vim.opt.clipboard = "unnamedplus"
