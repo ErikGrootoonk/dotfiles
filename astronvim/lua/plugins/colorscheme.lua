@@ -12,7 +12,7 @@ return {
   {
     "AstroNvim/astroui",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "astrotheme",
     },
   },
 }
