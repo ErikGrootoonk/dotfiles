@@ -145,7 +145,7 @@ export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 export PATH="$HOME/.local/bin:$PATH"
 
 # export kubeconfig
-export KUBECONFIG=$(find /home/erik/.kube/rancher -name "*.yaml" -type f | tr '\n' ':' | sed 's/:$//')
+#export KUBECONFIG=$(find /home/erik/.kube/rancher -name "*.yaml" -type f | tr '\n' ':' | sed 's/:$//')
 
 # Set up fzf key bindings fuzzy completion
 eval "$(fzf --bash)"
