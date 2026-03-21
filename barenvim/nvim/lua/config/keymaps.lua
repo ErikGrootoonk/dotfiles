@@ -17,3 +17,6 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- block select in WSL
 vim.keymap.set ('n', '<leader>v', '<c-v>')
+
+-- jj to esc in insert mode
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
