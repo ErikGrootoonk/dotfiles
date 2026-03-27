@@ -52,6 +52,20 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {"pyright", "lua_ls"}
 })
+
+local lspconfig = require("lspconfig")
+lspconfig.pyright.setup({})
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
+      },
+    },
+  },
+})
 require("kanagawa").setup()
 vim.cmd("colorscheme kanagawa")
 
