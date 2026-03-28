@@ -1,35 +1,4 @@
--- options
-vim.g.mapleader = " "
-vim.o.autoindent = true
-vim.o.scrolloff = 8
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.cursorline = true
-vim.o.signcolumn = "yes"
-vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
-
-
--- keymaps
-
--- toggle neotree
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "toggle Neotree", silent = true, noremap = true })
-
--- Navigate vim panes better
-vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
-
--- block select in WSL
-vim.keymap.set ('n', '<leader>v', '<C-v>')
-
--- jj to esc in insert mode
-vim.keymap.set({'i', 'v'}, 'jj', '<Esc>', { noremap = true })
-
--- save file
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Cmd>w<CR>', {desc = 'write file with ctrl-s', noremap = true, silent = true })
-
-
+ require("config.options")
 -- plugins
 vim.pack.add({
   { src = "https://github.com/rebelot/kanagawa.nvim" },
@@ -53,22 +22,29 @@ require("mason-lspconfig").setup({
 	ensure_installed = {"pyright", "lua_ls"}
 })
 
-local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({})
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT" },
-      diagnostics = {
-        globals = { "vim" },  -- <-- add this
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false,
-      },
-    },
-  },
+vim.lsp.config('lua_ls', {
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			},
+			diagnostics = {
+				globals = {
+					'vim',
+					'require'
+				},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 })
+
+
 require("kanagawa").setup()
 vim.cmd("colorscheme kanagawa")
 
