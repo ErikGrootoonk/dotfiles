@@ -124,6 +124,7 @@ alias kuc='k config use-context'
 alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias v='NVIM_APPNAME=eriknvim nvim'
+alias vn='NVIM_APPNAME=neo-ide nvim'
 alias iv='nvim $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
