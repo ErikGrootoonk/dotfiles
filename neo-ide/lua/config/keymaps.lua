@@ -67,3 +67,14 @@ map("n", "gi",         "<cmd>FzfLua lsp_implementations<cr>", { desc = "LSP impl
 
 -- toggle neo-tree
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "toggle Neotree", silent = true, noremap = true })
+
+
+-- block select in WSL
+vim.keymap.set ('n', '<leader>v', '<C-v>')
+
+-- jj to esc in insert mode
+vim.keymap.set({'i', 'v'}, 'jj', '<Esc>', { noremap = true })
+
+-- save file
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Cmd>w<CR>', {desc = 'write file with ctrl-s', noremap = true, silent = true })
+
