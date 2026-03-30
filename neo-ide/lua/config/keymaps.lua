@@ -77,4 +77,6 @@ vim.keymap.set({'i', 'v'}, 'jj', '<Esc>', { noremap = true })
 
 -- save file
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Cmd>w<CR>', {desc = 'write file with ctrl-s', noremap = true, silent = true })
+-- lazy git
 
+vim.keymap.set("n", "<leader>lg", "<cmd>lazyGit<cr>", { desc = "launch lazygit" })
