@@ -6,7 +6,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       options = {
-        theme            = "catppuccin",
+        theme            = "kanagawa",
         globalstatus     = true,
         disabled_filetypes = { statusline = { "neo-tree" } },
       },

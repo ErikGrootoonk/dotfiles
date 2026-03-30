@@ -21,8 +21,8 @@ else
         echo "nvim-linux-x86_64.tar.gz not found, nothing to remove"
     fi
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-    sudo rm -rf /opt/nvim-linux-x86_64.tar.gz
+    sudo rm -rf /opt/nvim-linux-x86_64
     sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-
+    sudo rm -rf ~/git/dotfiles/bash/nvim-linux-x86_64.tar.gz
 fi
 
