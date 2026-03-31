@@ -5,11 +5,12 @@ local function augroup(name)
 end
 
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
-  callback = function() vim.highlight.on_yank() end,
-})
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function() vim.hl.on_yank() end,
+})
 -- Restore cursor position
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = augroup("restore_cursor"),
