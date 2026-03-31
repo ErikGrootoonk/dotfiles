@@ -74,6 +74,5 @@ end,
 { desc = '[c]onform [f]ormat file' })
 
 
--- Oil nvim 
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- Neotree toggle
 vim.keymap.set("n", "<leader>e", ": Neotree toggle<CR>", { desc = "toggle neotree"})
