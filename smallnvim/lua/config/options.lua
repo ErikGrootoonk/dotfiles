@@ -60,6 +60,12 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- set max width to 100
+vim.opt.textwidth = 100
+vim.opt.colorcolumn = "100"
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
