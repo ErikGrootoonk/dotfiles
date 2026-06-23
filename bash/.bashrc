@@ -128,8 +128,8 @@ alias vn='NVIM_APPNAME=neo-ide nvim'
 alias iv='nvim $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=open
+export VISUAL=open
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
