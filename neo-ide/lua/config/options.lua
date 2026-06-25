@@ -46,3 +46,8 @@ opt.undofile = true		-- set undo file
 vim.o.undodir = vim.fn.expand("~/.local/share/nvim/undodir")
 
 
+-- set max width to 100
+opt.textwidth = 100
+opt.colorcolumn = "100"
+opt.wrap = true
+opt.linebreak = true
