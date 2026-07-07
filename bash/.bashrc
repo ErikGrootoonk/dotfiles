@@ -146,6 +146,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")\$ '
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
+
 # set GTK theme
 export GTK_THEME=Adwaita:dark
 
@@ -156,3 +159,12 @@ export GTK_THEME=Adwaita:dark
 eval "$(fzf --bash)"
 
 eval "$(zoxide init bash)"
+
+zoek() {
+  : | fzf --ansi --disabled --query "${1:-}" \
+      --bind "start:reload:rg --column --line-number --no-heading --color=always {q} -g '*.txt'" \
+      --bind "change:reload:rg --column --line-number --no-heading --color=always {q} -g '*.txt' || true" \
+      --delimiter : \
+      --preview 'rg --pretty --context 3 {q} {1}' \
+      --bind 'enter:become(nvim +{2} {1})'
+}
