@@ -119,7 +119,7 @@ vim.o.updatetime = 100 -- signify default updatetime 4000ms is not good for asyn
 
 -- theme
 vim.o.termguicolors = true -- enable 24-bit RGB colors
-vim.cmd('colorscheme catppuccin')
+vim.cmd('colorscheme retrobox')
 
 -- keymaps ------------------------------------------
 -- Navigate vim panes better

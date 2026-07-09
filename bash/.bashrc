@@ -124,8 +124,8 @@ alias kuc='k config use-context'
 alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias v='NVIM_APPNAME=smallnvim nvim'
-alias vn='NVIM_APPNAME=neo-ide nvim'
-alias iv='nvim $(fzf --preview="batcat --color=always {}")'
+alias vide='NVIM_APPNAME=neo-ide nvim'
+alias vf='nvim $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export EDITOR=open
@@ -146,7 +146,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")\$ '
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.config/emacs/bin:$PATH"
 
 
 # set GTK theme
@@ -162,8 +161,8 @@ eval "$(zoxide init bash)"
 
 zoek() {
   : | fzf --ansi --disabled --query "${1:-}" \
-      --bind "start:reload:rg --column --line-number --no-heading --color=always {q} -g '*.txt'" \
-      --bind "change:reload:rg --column --line-number --no-heading --color=always {q} -g '*.txt' || true" \
+      --bind "start:reload:rg --column --line-number --no-heading --color=always {q} -g '*.md'" \
+      --bind "change:reload:rg --column --line-number --no-heading --color=always {q} -g '*.md' || true" \
       --delimiter : \
       --preview 'rg --pretty --context 3 {q} {1}' \
       --bind 'enter:become(nvim +{2} {1})'
