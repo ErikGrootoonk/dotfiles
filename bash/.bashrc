@@ -167,3 +167,7 @@ zoek() {
       --preview 'rg --pretty --context 3 {q} {1}' \
       --bind 'enter:become(nvim +{2} {1})'
 }
+
+dagen() {
+  echo $(( ($(date +%s) - $(date -d "$1" +%s)) / 86400 ))
+}
