@@ -171,3 +171,7 @@ zoek() {
 dagen() {
   echo $(( ($(date +%s) - $(date -d "$1" +%s)) / 86400 ))
 }
+
+zones() {
+    kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.topology\.kubernetes\.io/zone}{"\t"}{.metadata.labels.node\.kubernetes\.io/instance-type}{"\n"}{end}'
+}
