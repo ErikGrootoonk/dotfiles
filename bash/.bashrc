@@ -125,6 +125,7 @@ alias stepserver='az ssh vm --ip maz000-vm-p0003.prhs.azure'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias v='NVIM_APPNAME=smallnvim nvim'
 alias vide='NVIM_APPNAME=neo-ide nvim'
+alias astro='NVIM_APPNAME=astronvim nvim'
 alias vf='nvim $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

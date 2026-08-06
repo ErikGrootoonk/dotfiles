@@ -1,4 +1,4 @@
--- if true then return {} end --
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason
 
@@ -13,18 +13,12 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
-        "gopls",
-        "json-lsp",
-        "yaml-language-server",
 
         -- install formatters
         "stylua",
-        "gofumpt",
-        "goimports",
-        "prettier",
 
         -- install debuggers
-        "delve",
+        "debugpy",
 
         -- install any other package
         "tree-sitter-cli",
