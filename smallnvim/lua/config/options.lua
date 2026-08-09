@@ -62,7 +62,7 @@ vim.o.splitbelow = true
 
 -- set max width to 100
 vim.opt.textwidth = 100
-vim.opt.colorcolumn = "100"
+--vim.opt.colorcolumn = "100"
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
@@ -115,5 +115,5 @@ vim.o.updatetime = 100 -- signify default updatetime 4000ms is not good for asyn
 
 -- theme
 vim.o.termguicolors = true -- enable 24-bit RGB colors
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("default")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none"})
