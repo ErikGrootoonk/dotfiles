@@ -63,7 +63,7 @@ vim.o.splitbelow = true
 -- set max width to 100
 vim.opt.textwidth = 100
 --vim.opt.colorcolumn = "100"
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.linebreak = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
