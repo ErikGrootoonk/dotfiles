@@ -68,12 +68,10 @@ return {
         ensure_installed = {
           "lua_ls",
           "pyright",
-          "ts_ls",
-          "rust_analyzer",
-          "gopls",
           "bashls",
           "jsonls",
           "yamlls",
+          "terraform-ls",
         },
         automatic_installation = true,
         -- Default handler runs for every installed server.
