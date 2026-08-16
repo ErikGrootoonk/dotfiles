@@ -71,7 +71,7 @@ return {
           "bashls",
           "jsonls",
           "yamlls",
-          "terraform-ls",
+          "terraformls",
         },
         automatic_installation = true,
         -- Default handler runs for every installed server.
