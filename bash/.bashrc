@@ -174,7 +174,7 @@ dagen() {
 }
 
 zones() {
-    kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.topology\.kubernetes\.io/zone}{"\t"}{.metadata.labels.node\.kubernetes\.io/instance-type}{"\n"}{end}'
+    kubectl get nodes -L topology.kubernetes.io/zone
 }
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
