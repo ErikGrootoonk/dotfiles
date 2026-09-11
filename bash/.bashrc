@@ -129,8 +129,8 @@ alias astro='NVIM_APPNAME=astronvim nvim'
 alias vf='nvim $(fzf --preview="batcat --color=always {}")'
 alias fz='fzf --preview="batcat --color=always {}"'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export EDITOR=open
-export VISUAL=open
+export EDITOR="code --wait"
+export VISUAL="code --wait"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
