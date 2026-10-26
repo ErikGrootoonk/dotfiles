@@ -75,3 +75,7 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Cmd>w<CR>', {desc = 'write file wit
 -- lazy git
 
 vim.keymap.set("n", "<leader>lg", "<cmd>lazyGit<cr>", { desc = "launch lazygit" })
+
+-- Claude code
+vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
+
