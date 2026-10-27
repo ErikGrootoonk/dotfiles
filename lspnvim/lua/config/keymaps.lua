@@ -17,3 +17,8 @@ vim.diagnostic.config({
   jump = { float = true },
 })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
+
+
+
+-- Neotree toggle
+vim.keymap.set("n", "<leader>e", ": Neotree toggle<CR>", { desc = "toggle neotree"})
